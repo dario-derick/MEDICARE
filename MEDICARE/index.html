@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medcare</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hero-section">
+        <header>
+            <!-- Fixed Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-stethoscope"></i>
+            <h1>MediCare</h1>
+        </div>
+        
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                
+                <li class="dropdown">
+                    <a href="#about">About <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#about">About Us</a>
+                        <a href="#mission">Our Mission</a>
+                        <a href="#team">Leadership</a>
+                        <a href="#facilities">Facilities</a>
+                    </div>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#general">General Medicine</a>
+                        <a href="#emergency">Emergency Care</a>
+                        <a href="#cardiology">Cardiology</a>
+                        <a href="#pediatrics">Pediatrics</a>
+                        <a href="#diagnostics">Diagnostics</a>
+                    </div>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#doctors">Doctors <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#cardiologists">Cardiologists</a>
+                        <a href="#pediatricians">Pediatricians</a>
+                        <a href="#neurologists">Neurologists</a>
+                        <a href="#surgeons">Surgeons</a>
+                    </div>
+                </li>
+                
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search...">
+            </div>
+            
+            <button class="appointment-btn" id="btn-red" onclick="redirectToBooking()">
+                <i class="fas fa-calendar-check"></i> Appointment
+            </button>
+        </div>
+        
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+        </header>
+
+        <div class="hero-content" data-aos="fade-up">
+            <div class="hero-text">
+                <div class="small-heading">
+                    <h4>MEDICAL</h4>
+                </div>
+                <div class="H1-HERO">
+                    <h1>Health Care Solutions</h1>
+                </div>
+                <div class="hero-p">
+                    <p>We provide trusted, compassionate, and affordable healthcare services to keep you and your family healthy. Whether it’s a routine check-up or specialized care  we’re here for you, every step of the way.</p>
+                </div>
+                <div class="hero-button">
+                    <button class="btn-1">Find Doctors</button>
+                    <button class="btn-2">Explore Services</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/Medicine-bro.png"/>
+            </div>
+        </div>
+    </div>
+    
+    <section id="services" class="services-section" data-aos="fade-up">
+        <h3>Our Medical services</h3>
+        
+        <div class="container-cards">
+            <div class="service-card">
+                <i class="fas fa-stethoscope"></i>
+                <h4>General Health Checkup</h4>
+                <p>Comprehensive consultations with experienced doctors for diagnosis, treatment, and preventive care.</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+            <div class="service-card">
+               <i class="fas fa-ambulance"></i>
+               <h4>24/7 Emergency Services</h4>
+                <p>Immediate medical attention for critical conditions with our dedicated emergency team.</p>
+                <a href="#" class="btn">Call Now</i></a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-laptop-medical"></i>
+                <h4>Virtual Doctor Visit</h4>
+                <p>Consult with specialists remotely via secure video calls from the comfort of your home.</p>
+                <a href="#" class="btn">Schedule Online</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-baby"></i>
+                <h4>Pedeactric Care</h4>
+                <p>Gentle, specialized care for infants and children, including vaccinations and growth monitoring.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            <div class="service-card">
+               <i class="fas fa-pills"></i>
+                <h4>Pharmacy Services</h4>
+                <p>Access a wide range of prescription and over-the-counter medications from certified pharmacists.</p>
+                <a href="#" class="btn">Order Now</a>
+            </div>
+
+            <div class="service-card">
+              <i class="fas fa-heartbeat"></i>
+              <h4>Cardiac Care</h4>
+              <p>Specialized heart health screening, diagnosis, and treatment for improved cardiovascular wellness.</p>
+              <a href="#" class="btn">Learn More</a>
+            </div>
+            
+        </div>
+        
+    </section>
+    <!-------our Team section-->
+     <section class="team-section" data-aos="fade-up">
+        <div class="section-header">
+            <h2>Meet Our <span>Medical Experts</span></h2>
+            <p>Highly qualified professionals dedicated to your health and well-being</p>
+        </div>
+        
+        <!-- Team Slider -->
+        <div class="slider">
+          <div class="slides">
+            <div class="slides-card">
+              <div class="image">
+                <img src="images/Kim Nashi.jpg" alt="kim nashi"/>
+              </div>
+              <h3>Dr. Kim Nashi</h3>
+              <p>Senior Doctor</p>
+              <button>Send Message</button>
+            </div>
+            <!---rodrigo-->
+
+            <div class="slides-card">
+              <div class="image">
+                <img src="images/Nezah Rodgrigo.jpg" alt="kim nashi"/>
+              </div>
+              <h3>Dr. Nezah Rodgrigo</h3>
+              <p>Neurologist</p>
+              <button>Send Message</button>
+            </div>
+
+            <!---meshack-->
+            <div class="slides-card">
+              <div class="image">
+                <img src="images/meshack Thrupal.jpg" alt="kim nashi"/>
+              </div>
+              <h3>Dr. Meshack Thrupal</h3>
+              <p>Senior Doctor</p>
+              <button>Send Message</button>
+            </div>
+
+            <!--sheril-->
+            <div class="slides-card">
+              <div class="image">
+                <img src="images/Kimean Sheril.jpg" alt="kim nashi"/>
+              </div>
+              <h3>Dr.Kimean Sheril</h3>
+              <p>Senior Nurse</p>
+              <button>Send Message</button>
+            </div>
+
+            <!---ruben-->
+            <div class="slides-card">
+              <div class="image">
+                <img src="images/Ruben Doshan.jpg" alt="kim nashi"/>
+              </div>
+              <h3>Dr.Ruben Doshan</h3>
+              <p>Senior Doctor</p>
+              <button>Send Message</button>
+            </div>
+          </div>
+        </div>
+
+    </section>
+
+  <section class="about-section" data-aos="fade-up">
+  <div class="container">
+    <div class="about-content">
+      <h2 class="section-title">Compassionate Care <span>Since 2010</span></h2>
+      <p class="lead">At MediCare, we believe everyone deserves access to exceptional healthcare.</p>
+      
+      <div class="about-features">
+        <div class="feature">
+          <i class="fas fa-user-md"></i>
+          <h3>50+ Specialists</h3>
+          <p>Board-certified doctors across 12 disciplines</p>
+        </div>
+        
+        <div class="feature">
+          <i class="fas fa-procedures"></i>
+          <h3>Advanced Facilities</h3>
+          <p>State-of-the-art diagnostic equipment</p>
+        </div>
+      </div>
+      
+      <div class="mission">
+        <h3><i class="fas fa-heart"></i> Our Mission</h3>
+        <p>To provide patient-centered care that combines cutting-edge medicine with genuine compassion.</p>
+        <a href="#" class="btn btn-outline">Meet Our Team <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    
+    <div class="about-image">
+      <img src="images/Medical research-amico.png" alt="Doctor consulting with patient" loading="lazy">
+      <div class="experience-badge">
+        <span>12+</span>
+        <p>Years of Trust</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Section -->
+    <section class="newsletter-section" data-aos="fade-up">
+        <!-- Decorative Elements -->
+        <i class="fas fa-heartbeat newsletter-decoration decoration-1"></i>
+        <i class="fas fa-stethoscope newsletter-decoration decoration-2"></i>
+        
+        <div class="newsletter-container">
+            <!-- Newsletter Content -->
+            <div class="newsletter-content">
+                <h2>Stay <span>Updated</span> With Health Tips</h2>
+                <p>Subscribe to our newsletter for the latest medical news, health tips, and exclusive offers from MedCare.</p>
+                <ul style="color: #555; padding-left: 20px; line-height: 1.8;">
+                    <li>Monthly health insights</li>
+                    <li>Preventive care tips</li>
+                    <li>Special appointment offers</li>
+                    <li>New service announcements</li>
+                </ul>
+            </div>
+            
+            <!-- Newsletter Form -->
+            <form class="newsletter-form" id="newsletterForm">
+                <div class="form-rows">
+                    <div class="form-groups">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" class="form-controls" required>
+                    </div>
+                    <div class="form-groups">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" class="form-controls" required>
+                    </div>
+                </div>
+                
+                <div class="form-groups">
+                    <label for="email">Email Address*</label>
+                    <input type="email" id="email" class="form-controls" required>
+                </div>
+                
+                <div class="checkbox-groups">
+                    <input type="checkbox" id="consent" required>
+                    <label for="consent">I agree to receive emails from MedCare and accept the <a href="#">privacy policy</a>.</label>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Subscribe Now
+                </button>
+            </form>
+            
+            <!-- Success Message (hidden by default) -->
+            <div class="success-message" id="successMessage">
+                <i class="fas fa-check-circle"></i>
+                <h3>Thank You for Subscribing!</h3>
+                <p>You've been added to our newsletter list. Look out for health tips and updates in your inbox.</p>
+                <button class="submit-btn" onclick="resetForm()">
+                    <i class="fas fa-arrow-left"></i> Back to Form
+                </button>
+            </div>
+        </div>
+    </section>
+
+   <!-- Testimonials Section -->
+    <section class="testimonials-section" data-aos="fade-up" >
+        <div class="section-header">
+            <h2>Patient <span>Testimonials</span></h2>
+            <p>Hear what our patients say about their experiences at MedCare</p>
+        </div>
+        
+        <div class="testimonials-container">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>The cardiology team saved my life after my heart attack. Their expertise and compassionate care made my recovery smooth. I'm forever grateful!</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="images/abdul.jfif" alt="Robert Johnson">
+                    </div>
+                    <div class="author-info">
+                        <h4>Robert Abdul</h4>
+                        <p>Heart Patient</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>As a new mom, I was nervous about pediatric care. Dr. Sarah and her team made us feel like family. My baby actually smiles during visits now!</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="images/emily.jfif" alt="Emily Chen">
+                    </div>
+                    <div class="author-info">
+                        <h4>Emily Cherotich</h4>
+                        <p>Mother of 2</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>After my knee surgery, the physical therapy team helped me regain full mobility. Their personalized approach made all the difference in my recovery.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="images/odongo.jfif" alt="Michael Rodriguez">
+                    </div>
+                    <div class="author-info">
+                        <h4>Michael Odongo</h4>
+                        <p>Sports Injury</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Us Section -->
+<section class="contact-section" data-aos="fade-up">
+  <div class="container-contact">
+    <!-- Section Header -->
+    <div class="section-header">
+      <h2><span>Contact</span> MedCare</h2>
+      <p>Reach out for appointments, inquiries, or emergencies</p>
+    </div>
+
+    <div class="contact-container">
+      
+      <div class="contact-details">
+        <div class="contact-card">
+           <i class="fas fa-phone-alt"></i>
+           <span>
+            <h3>Call Us</h3>
+            <p>Main: <a href="tel:+15551234567">(077) 123-4567</a></p>
+            <p>Emergency: <a href="tel:+15559876543">(085) 987-6543</a></p>
+            <p class="hours">24/7 Emergency Line Available</p>
+           </span>
+
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>
+            <h3>Visit Us</h3>
+            <address>
+            123 Oginga Odinga Street<br>
+            Kisumu City, HQ 56789
+          </address>
+          <p class="hours">
+            <strong>Hours:</strong><br>
+            Mon-Fri: 8:00 AM - 8:00 PM<br>
+            Sat: 9:00 AM - 5:00 PM<br>
+            Sun: Emergency Only
+          </p>
+          </span>
+        </div>
+
+        <div class="contact-card">
+          <i class="fas fa-envelope"></i>
+          <h3>Email Us</h3>
+          <span>
+            <p><a href="mailto:info@medcare.com">info@medcare.com</a></p>
+            <p><a href="mailto:support@medcare.com">support@medcare.com</a></p>
+            <p class="hours">Response within 24 hours</p>
+          </span>
+        </div>
+
+      </div>
+      
+      <!-- Contact Form -->
+      <div class="contact-form-container" id="animate">
+        <h3>Send Us a Message</h3>
+        <form class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" placeholder="Full Name*" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email*" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <input type="tel" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+              <select required>
+                <option value="">Department*</option>
+                <option>General Medicine</option>
+                <option>Pediatrics</option>
+                <option>Cardiology</option>
+                <option>Emergency</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <textarea placeholder="Your Message*" rows="5" required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+
+
+        
+      
+
+     
+    </div>
+
+   
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer data-aos="fade-up" class="footer" >
+  <div class="footer-container">
+    <!-- Footer Top -->
+    <div class="footer-top">
+      <!-- About Column -->
+      <div class="footer-column">
+        <h3 class="footer-heading">
+          <img src="images/logo.png" alt="MediCare" class="footer-logo">
+        </h3>
+        <p class="footer-about">
+          MedCare provides compassionate healthcare services with a patient-first approach since 2010.
+        </p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Services</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Doctors</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Appointments</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services Column -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Our Services</h3>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Emergency Care</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Cardiology</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Diagnostics</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Pediatric Care</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Telemedicine</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Pharmacy</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Column -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Contact Info</h3>
+        <ul class="footer-contact">
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>123 Oginga Odinga Street<br>Kisumu City, HQ 56789</span>
+          </li>
+          <li>
+            <i class="fas fa-phone-alt"></i>
+            <span>
+              <a href="tel:+15551234567">(077) 123-4567</a><br>
+              <a href="tel:+15559876543">(085) 987-6543</a>
+            </span>
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <span>
+              <a href="mailto:info@medcare.com">info@medicare.com</a><br>
+              <a href="mailto:support@medcare.com">support@medicare.com</a>
+            </span>
+          </li>
+          <li>
+            <i class="fas fa-clock"></i>
+            <span>Mon-Fri: 8AM-8PM<br>Sat: 9AM-5PM</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        &copy; <span id="year"></span> MedCare. All Rights Reserved.
+      </div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">TAS SOLUTIONS</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<button id="scrollTopBtn" title="Go to top">&#8679;</button>
+<script src="main.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>

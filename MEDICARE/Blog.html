@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | MediCare</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Comfortaa:wght@500;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0d92d9;
+            --secondary-color: #0077B6;
+            --background-color: #E6F4FA;
+            --default-font: "Poppins", sans-serif;
+            --heading-font: "Comfortaa", sans-serif;
+            --optional-font: "Libre Baskerville", serif;
+            --text-color: #333;
+            --text-light: #666;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--default-font);
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: var(--heading-font);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-family: var(--default-font);
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+        .navbar i{
+            font-size: 1.2rem;
+        }
+        
+        /* Back Button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            background: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 1.5rem 5%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 5rem 5%;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: var(--heading-font);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Blog Grid */
+        .blog-container {
+            max-width: 1400px;
+            margin: 3rem auto;
+            padding: 0 5%;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .blog-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-date {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--optional-font);
+        }
+        
+        .blog-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
+            font-family: var(--heading-font);
+        }
+        
+        .blog-excerpt {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+        
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .read-more:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background: var(--white);
+            padding: 3rem 5%;
+            margin: 3rem 0;
+            text-align: center;
+            border-radius: 8px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .newsletter h2 {
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            font-family: var(--heading-font);
+        }
+        
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-weight: 600;
+        }
+        
+        .newsletter-form button:hover {
+            background: var(--secondary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background: #222;
+            color: var(--white);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-icons a {
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+        
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+                border-radius: 4px;
+            }
+            .newsletter h2{
+                font-size: 1.2rem;
+            }
+            .back-btn {
+                margin: 1rem 5%;
+                padding: 0.6rem 1.2rem;
+            }
+            .newsletter-form button{
+                padding: 10px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <i class="fa fa-stethoscope"><a href="index.html" class="logo">MediCare</a></i>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="#">Blog</a>
+                <a href="index.html">Services</a>
+                <a href="index.html">About</a>
+                <a href="index.html">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+    
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Our Blog</h1>
+        <p>Stay updated with the latest news, tips, and insights from our team of experts.</p>
+    </section>
+    
+    <!-- Blog Grid -->
+    <div class="blog-container">
+        <div class="blog-grid">
+            <!-- Blog Post 1 -->
+            <article class="blog-card">
+                <img src="images/healthy lifestyle.jpg" alt="Healthy Lifestyle" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-date">
+                        <i class="far fa-calendar-alt"></i> June 15, 2023
+                    </div>
+                    <h3 class="blog-title">10 Tips for Maintaining a Healthy Lifestyle</h3>
+                    <p class="blog-excerpt">Discover practical ways to improve your daily habits and boost your overall wellbeing with these simple tips.</p>
+                    <a href="#" class="read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Blog Post 2 -->
+            <article class="blog-card">
+                <img src="images/medicine advancement.jpg" alt="Medicine Advancements" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-date">
+                        <i class="far fa-calendar-alt"></i> May 28, 2023
+                    </div>
+                    <h3 class="blog-title">Understanding Modern Medicine Advancements</h3>
+                    <p class="blog-excerpt">Explore the latest breakthroughs in medical technology and how they're changing patient care.</p>
+                    <a href="#" class="read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Blog Post 3 -->
+            <article class="blog-card">
+                <img src="images/regular.jpg" alt="Regular Exercise" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-date">
+                        <i class="far fa-calendar-alt"></i> May 10, 2023
+                    </div>
+                    <h3 class="blog-title">The Importance of Regular Exercise</h3>
+                    <p class="blog-excerpt">Learn why consistent physical activity is crucial for both physical and mental health at any age.</p>
+                    <a href="#" class="read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Blog Post 4 -->
+            <article class="blog-card">
+                <img src="images/nutrition myths.jpg" alt="Nutrition Myths" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-date">
+                        <i class="far fa-calendar-alt"></i> April 22, 2023
+                    </div>
+                    <h3 class="blog-title">Nutrition Myths Debunked</h3>
+                    <p class="blog-excerpt">We separate fact from fiction in the world of nutrition and dieting advice.</p>
+                    <a href="#" class="read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Blog Post 5 -->
+            <article class="blog-card">
+                <img src="images/mental health.jpg" alt="Mental Health" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-date">
+                        <i class="far fa-calendar-alt"></i> April 5, 2023
+                    </div>
+                    <h3 class="blog-title">Mental Health Awareness</h3>
+                    <p class="blog-excerpt">Understanding the signs of mental health issues and how to seek help for yourself or loved ones.</p>
+                    <a href="#" class="read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Blog Post 6 -->
+            <article class="blog-card">
+                <img src="images/Preventive health care.jpg" alt="Preventive Healthcare" class="blog-img">
+                <div class="blog-content">
+                    <div class="blog-date">
+                        <i class="far fa-calendar-alt"></i> March 18, 2023
+                    </div>
+                    <h3 class="blog-title">Preventive Healthcare Checklist</h3>
+                    <p class="blog-excerpt">A comprehensive guide to the screenings and checkups you should have at every stage of life.</p>
+                    <a href="#" class="read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </div>
+    
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Get the latest health tips and updates delivered straight to your inbox.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit" class="submit">Subscribe</button>
+        </form>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="#index.html">Services</a>
+            <a href="index.html">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="copyright">© 2025 MediCare. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
